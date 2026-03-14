@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport({
 
 app.post("/send-email", async (req, res) => {
 
-  const { to, subject, message } = req.body;
+  const { to, subject} = req.body;
 
   try {
 
@@ -85,7 +85,7 @@ app.post("/send-email", async (req, res) => {
 
 });
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Email server running on port 3000");
 });
